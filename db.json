@@ -1,0 +1,178 @@
+{
+  "plats": [
+    {
+      "id": "1",
+      "nom": "Tagine de Poulet aux Citrons Confits & Olives",
+      "prix": 85,
+      "categorie": "Plats Principaux",
+      "image": "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=800&q=80",
+      "description": "Poulet fermier mijoté lentement aux épices de Fès, safran pur de Taliouine, citrons beldi confits et olives rouges de Marrakech.",
+      "tempsPrep": "25 min",
+      "rating": 4.9,
+      "calories": "520 kcal",
+      "isPopular": true
+    },
+    {
+      "id": "2",
+      "nom": "Couscous Royal aux Sept Légumes & Agneau",
+      "prix": 110,
+      "categorie": "Plats Principaux",
+      "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80",
+      "description": "Semoule fine travaillée à la main, tendres morceaux d'agneau et merguez artisanales, courgettes, carottes, navets, potiron et pois chiches au bouillon parfumé.",
+      "tempsPrep": "30 min",
+      "rating": 5,
+      "calories": "680 kcal",
+      "isPopular": true
+    },
+    {
+      "id": "3",
+      "nom": "Pastilla Traditionnelle au Poulet & Amandes",
+      "prix": 95,
+      "categorie": "Entrées",
+      "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80",
+      "description": "Feuilletage ouarka croustillant renfermant une farce savoureuse de poulet effiloché, amandes torréfiées concassées, parfumée à la fleur d'oranger et cannelle.",
+      "tempsPrep": "20 min",
+      "rating": 4.8,
+      "calories": "450 kcal",
+      "isPopular": true
+    },
+    {
+      "id": "4",
+      "nom": "Zaalouk & Briouates Mixtes",
+      "prix": 45,
+      "categorie": "Entrées",
+      "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80",
+      "description": "Caviar d'aubergines grillées aux tomates fraîches et cumin torréfié, accompagné d'un trio de briouates croustillantes au fromage de chèvre et herbes.",
+      "tempsPrep": "15 min",
+      "rating": 4.7,
+      "calories": "280 kcal",
+      "isPopular": false
+    },
+    {
+      "id": "5",
+      "nom": "Burger Gourmet Berbère au Bœuf Charolais",
+      "prix": 78,
+      "categorie": "Plats Principaux",
+      "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80",
+      "description": "Pain brioché artisanal aux graines de nigelle, steak haché 180g grillé à la flamme, cheddar affiné, oignons caramélisés et sauce mayonnaise maison au harissa doux.",
+      "tempsPrep": "18 min",
+      "rating": 4.8,
+      "calories": "650 kcal",
+      "isPopular": false
+    },
+    {
+      "id": "6",
+      "nom": "Salade Fraîcheur Méditerranéenne & Burrata",
+      "prix": 55,
+      "categorie": "Entrées",
+      "image": "https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=800&q=80",
+      "description": "Tomates cerises multicolores, concombres croquants, grenades, cœur de burrata crémeuse, pignons de pin et vinaigrette légère à l'huile d'argan.",
+      "tempsPrep": "12 min",
+      "rating": 4.6,
+      "calories": "310 kcal",
+      "isPopular": false
+    },
+    {
+      "id": "7",
+      "nom": "Tartelette Croustillante aux Figues & Miel",
+      "prix": 40,
+      "categorie": "Desserts",
+      "image": "https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=800&q=80",
+      "description": "Pâte sablée au beurre pur, crème d'amandes fondante, figues fraîches rôties au miel d'oranger et éclats de pistaches grillées.",
+      "tempsPrep": "10 min",
+      "rating": 4.9,
+      "calories": "320 kcal",
+      "isPopular": true
+    },
+    {
+      "id": "8",
+      "nom": "Corne de Gazelle & Assortiment Marocain",
+      "prix": 38,
+      "categorie": "Desserts",
+      "image": "https://images.unsplash.com/photo-1579372786545-d24232daf58c?auto=format&fit=crop&w=800&q=80",
+      "description": "Sélection de douceurs impériales: cornes de gazelle à l'eau de rose, ghriba aux noix et chebbakia artisanale au sésame doré.",
+      "tempsPrep": "8 min",
+      "rating": 4.9,
+      "calories": "390 kcal",
+      "isPopular": false
+    },
+    {
+      "id": "9",
+      "nom": "Thé à la Menthe Fraîche & Absinthe (Chiba)",
+      "prix": 20,
+      "categorie": "Boissons",
+      "image": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80",
+      "description": "Thé vert gunpowder infusé à la perfection avec feuilles de menthe bio fraîches, pointe d'absinthe et servi à la marocaine avec sa belle mousse.",
+      "tempsPrep": "5 min",
+      "rating": 5,
+      "calories": "45 kcal",
+      "isPopular": true
+    },
+    {
+      "id": "10",
+      "nom": "Jus d'Orange Pressé & Fleur d'Oranger",
+      "prix": 25,
+      "categorie": "Boissons",
+      "image": "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=800&q=80",
+      "description": "Oranges de Berkane fraîchement pressées à la minute, délicatement sublimées par quelques gouttes d'eau de fleur d'oranger artisanale.",
+      "tempsPrep": "5 min",
+      "rating": 4.8,
+      "calories": "110 kcal",
+      "isPopular": false
+    }
+  ],
+  "commandes": [
+    {
+      "client": {
+        "nom": "Mehdi Alami",
+        "telephone": "0612345678",
+        "adresse": "Avenue Hassan II, Résidence Majorelle, Marrakech"
+      },
+      "articles": [
+        {
+          "id": "1",
+          "nom": "Tagine de Poulet aux Citrons Confits & Olives",
+          "prix": 85,
+          "quantity": 2,
+          "totalArticle": 170
+        }
+      ],
+      "sousTotal": 170,
+      "fraisLivraison": 0,
+      "total": 170,
+      "statut": "En préparation",
+      "date": "2026-10-27T17:09:29.492Z",
+      "id": "R8o_YTT7W0A"
+    },
+    {
+      "client": {
+        "nom": "aaziz othmani",
+        "telephone": "0666616332",
+        "adresse": "181 lot wiam 02"
+      },
+      "articles": [
+        {
+          "id": "5",
+          "nom": "Burger Gourmet Berbère au Bœuf Charolais",
+          "prix": 78,
+          "quantity": 1,
+          "totalArticle": 78
+        },
+        {
+          "id": "10",
+          "nom": "Jus d'Orange Pressé & Fleur d'Oranger",
+          "prix": 25,
+          "quantity": 1,
+          "totalArticle": 25
+        }
+      ],
+      "sousTotal": 103,
+      "fraisLivraison": 15,
+      "total": 118,
+      "statut": "En préparation",
+      "date": "2026-10-27T17:17:51.450Z",
+      "id": "kP6GM8xT7Jw"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

@@ -1,0 +1,926 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="fr"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_standard" name="shell-type">
+<title>Tiremt - Haute Bistronomie Livrée</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Bricolage+Grotesque:opsz,wght@12..96,600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #FFFFFF;
+        color: #111827;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+    }
+    .font-display {
+      font-family: 'Bricolage Grotesque', sans-serif;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F3F4F6;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D1D5DB;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #9CA3AF;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            orange: {
+              50: '#FFF7ED',
+              100: '#FFEDD5',
+              200: '#FED7AA',
+              500: '#F97316',
+              600: '#EA580C',
+              700: '#C2410C',
+            },
+            charcoal: '#111827',
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Bricolage Grotesque"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-gray-900 antialiased selection:bg-orange-100 selection:text-orange-700">
+<!-- Crisp Minimalist Navigation Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
+<div class="h-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+<!-- Brand Logo -->
+<div class="flex items-center gap-3 shrink-0">
+<div class="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center text-orange-500 shadow-xs border border-orange-100">
+<span class="material-symbols-outlined text-2xl font-bold">restaurant_menu</span>
+</div>
+<a class="flex flex-col" href="#"><span class="font-display font-extrabold text-xl sm:text-2xl text-charcoal tracking-tight leading-none">Tiremt</span><span class="text-[11px] font-semibold text-gray-400 tracking-wider uppercase mt-1">Gastronomie &amp; Terroirs • Haute Bistronomie</span></a>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden lg:flex items-center gap-8">
+<a class="text-sm font-semibold text-charcoal hover:text-orange-500 transition-colors" href="#menu-catalog">La Carte &amp; Menu</a>
+<a class="text-sm font-medium text-gray-600 hover:text-orange-500 transition-colors" href="#">Notre Histoire</a>
+<a class="text-sm font-medium text-gray-600 hover:text-orange-500 transition-colors" href="#">Chef &amp; Terroir</a>
+<a class="text-sm font-medium text-gray-600 hover:text-orange-500 transition-colors" href="#">Avis</a>
+<a class="text-sm font-medium text-gray-600 hover:text-orange-500 transition-colors" href="#panier-section">Réservations</a>
+</nav>
+<!-- Right Header Actions -->
+<div class="flex items-center gap-4 shrink-0">
+<a class="relative p-2.5 rounded-full bg-gray-50 hover:bg-orange-50 border border-gray-200 hover:border-orange-200 text-charcoal hover:text-orange-600 transition-all duration-200 flex items-center justify-center" href="#panier-section">
+<span class="material-symbols-outlined text-[22px]">shopping_bag</span>
+<span class="absolute -top-1 -right-1 flex h-5 min-w-[20px] px-1 items-center justify-center rounded-full bg-orange-500 text-white font-bold text-xs shadow-sm">
+            3
+          </span>
+</a>
+<div class="flex items-center gap-2 pl-3 border-l border-gray-200">
+<img alt="Profil client" class="w-9 h-9 rounded-full object-cover ring-2 ring-orange-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlAKpDbopVMG4BvsM8Gn1t-Y0z_-JD54McL2bYdR0cMQPOFFbgknVKNG9V6BnFMHPDgIn_M-9Jlsfb6GmtfEILZVZTisMMSV9OjoUiahiNpnMA88o_qNWFjNMywoBebBmFfmNFvBUZVCz_pbIkP735SeybY3_Tdj1SvNIJ1x1heSDlssMB53gA710NKodQpOinOUqaNJCHL_5ui1zMG3CRyoTXv3D4EDbRx4eCTyDE">
+<span class="hidden sm:inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-50 text-amber-700 border border-amber-200">
+            VIP Club
+          </span>
+</div>
+</div>
+</div>
+</header>
+<main class="w-full pt-20">
+<!-- 3. Home & Hero Section (Clean, Minimalist, Sunlit Split-Screen) -->
+<section class="relative w-full bg-white pt-10 pb-16 lg:py-20 overflow-hidden border-b border-gray-100">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Left Column: Typography, Badges & CTA -->
+<div class="lg:col-span-7 space-y-6">
+<!-- Warm Quality Badge -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200/80 text-orange-700 text-xs font-semibold shadow-xs">
+<span class="material-symbols-outlined text-[16px] text-orange-500">stars</span>
+<span class="">Étoilé &amp; Fait Maison • Ingrédients 100% Bio &amp; Terroir</span>
+</div>
+<!-- Crisp Main Headline -->
+<h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-charcoal tracking-tight leading-[1.12]">
+              L'Art de la Gastronomie Française, <br class="hidden sm:inline">
+<span class="text-orange-500">Frais &amp; Livré chez Vous</span>
+</h1>
+<!-- Appetizing Subtitle -->
+<p class="text-gray-600 text-lg sm:text-xl font-normal leading-relaxed max-w-xl">
+              Sous la signature du Chef Alan Reid. Réductions mijotées 18h, pièces nobles rôties au sarment de vigne et maraîchage d'Île-de-France livrés à température de dégustation immédiate.
+            </p>
+<!-- Call to Actions -->
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold text-base shadow-sm hover:shadow-orange-200 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200" href="#menu-catalog">
+<span class="material-symbols-outlined text-[20px]">room_service</span>
+<span class="">Commander Maintenant</span>
+</a>
+<a class="inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-white hover:bg-gray-50 text-gray-700 font-semibold text-base border border-gray-200 hover:border-gray-300 transition-all duration-200 shadow-xs" href="#menu-catalog">
+<span class="">Découvrir la Carte</span>
+<span class="material-symbols-outlined text-[18px]">south</span>
+</a>
+</div>
+<!-- Trust Indicators Bar -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-gray-100">
+<div class="p-3.5 rounded-xl bg-gray-50 border border-gray-100 flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-orange-500 shrink-0 shadow-xs">
+<span class="material-symbols-outlined text-[20px]">grade</span>
+</div>
+<div>
+<div class="font-bold text-charcoal text-sm">4.9 / 5</div>
+<div class="text-xs text-gray-500 font-medium">1 200+ avis</div>
+</div>
+</div>
+<div class="p-3.5 rounded-xl bg-gray-50 border border-gray-100 flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-orange-500 shrink-0 shadow-xs">
+<span class="material-symbols-outlined text-[20px]">nest_heat_link_e</span>
+</div>
+<div>
+<div class="font-bold text-charcoal text-sm">Isotherme</div>
+<div class="text-xs text-gray-500 font-medium">65°C certifié</div>
+</div>
+</div>
+<div class="p-3.5 rounded-xl bg-gray-50 border border-gray-100 flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-orange-500 shrink-0 shadow-xs">
+<span class="material-symbols-outlined text-[20px]">timer</span>
+</div>
+<div>
+<div class="font-bold text-charcoal text-sm">30 min</div>
+<div class="text-xs text-gray-500 font-medium">Paris intra-muros</div>
+</div>
+</div>
+<div class="p-3.5 rounded-xl bg-gray-50 border border-gray-100 flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-orange-500 shrink-0 shadow-xs">
+<span class="material-symbols-outlined text-[20px]">eco</span>
+</div>
+<div>
+<div class="font-bold text-charcoal text-sm">Circuit Court</div>
+<div class="text-xs text-gray-500 font-medium">100% Fraîcheur</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Bright, High-End Food Photography & Floating Badge -->
+<div class="lg:col-span-5 relative">
+<div class="relative w-full aspect-[4/3] sm:aspect-[1/1] rounded-3xl overflow-hidden shadow-xl border border-gray-100 bg-gray-100">
+<img class="w-full h-full object-cover object-center" data-alt="Exquisite duck breast dish with fig sauce plated elegantly on white ceramic dish in sunlit Parisian dining table." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_0mY_YbcNcT5kfsU3JrC_ocsjmtI1AvRFEg80jHgVx-cNo_OglGYpP7e40SKNgvNytezbPxZ689QtMyYPg0JzfsarwVX0_nuyltHfyQmhAYtxiZRtl8-LEIne4s7yNIfF5p57hYTuh52cLEcExHCpJfKBXdoXlBstfnLVKITYCCD-1VmH6BOoYDYlIrUqoI7aeIle2yB-go6ptUk2A3CBM37uH98EwQiGMwxbk-q-">
+</div>
+<!-- Floating Review Badge -->
+<div class="absolute -bottom-5 -left-4 sm:bottom-6 sm:-left-6 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-lg border border-gray-100 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold">
+                ⭐
+              </div>
+<div>
+<p class="font-bold text-sm text-charcoal">4.9/5 satisfaction</p>
+<p class="text-xs text-gray-500">+1 200 gourmets servis</p>
+</div>
+</div>
+<!-- Floating Express Guarantee Badge -->
+<div class="absolute top-6 -right-2 sm:-right-4 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-md border border-gray-100 flex items-center gap-2 text-xs font-bold text-charcoal">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              En direct de la cuisine
+            </div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Interactive Search Bar & Minimalist Filters Suite -->
+<section class="sticky top-20 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200 py-4" id="menu-catalog">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3.5">
+<!-- Search Input Bar -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+<div class="relative w-full sm:max-w-md">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-[20px] pointer-events-none">
+              search
+            </span>
+<input class="w-full bg-gray-50 hover:bg-white focus:bg-white pl-10 pr-20 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm text-charcoal placeholder:text-gray-400 transition-all duration-200" id="dish-search" placeholder="Rechercher un mets, ingrédient, vin..." type="text">
+<div class="absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center gap-1">
+<kbd class="hidden sm:inline-block px-1.5 py-0.5 rounded bg-gray-200 text-gray-500 text-[10px] font-semibold">⌘K</kbd>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-auto text-xs text-gray-500 font-medium">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span class="">Cuisine ouverte • 18 créations fraîches disponibles</span>
+</div>
+</div>
+<!-- Category Filter Pills -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+<button class="category-pill active whitespace-nowrap px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 bg-orange-500 text-white shadow-xs" type="button">
+            Tous les Plats (18)
+          </button>
+<button class="category-pill whitespace-nowrap px-4 py-2 rounded-full text-xs font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-gray-900" type="button">
+            Entrées Fines
+          </button>
+<button class="category-pill whitespace-nowrap px-4 py-2 rounded-full text-xs font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-gray-900" type="button">
+            Plats Signatures
+          </button>
+<button class="category-pill whitespace-nowrap px-4 py-2 rounded-full text-xs font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-gray-900" type="button">
+            Viandes &amp; Volailles
+          </button>
+<button class="category-pill whitespace-nowrap px-4 py-2 rounded-full text-xs font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-gray-900" type="button">
+            Pêche Durable
+          </button>
+<button class="category-pill whitespace-nowrap px-4 py-2 rounded-full text-xs font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-gray-900" type="button">
+            Desserts Gourmands
+          </button>
+<button class="category-pill whitespace-nowrap px-4 py-2 rounded-full text-xs font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-gray-900" type="button">
+            Vins &amp; Nectars
+          </button>
+</div>
+</div>
+</section>
+<!-- 5. PlatCard (Dish Catalog Grid - Minimalist Bright White Cards) -->
+<section class="w-full py-14 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-gray-100 pb-5">
+<div>
+<span class="text-xs font-bold text-orange-500 uppercase tracking-wider">Sélection de Saison</span>
+<h2 class="font-display font-bold text-3xl text-charcoal">Les Créations du Chef</h2>
+</div>
+<p class="text-sm text-gray-500 max-w-sm">
+            Chaque plat est dressé avec précision et accompagné des fiches de service du sommelier.
+          </p>
+</div>
+<!-- 3-Column Responsive Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Dish 1: Magret de Canard -->
+<article class="group relative flex flex-col justify-between rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-gray-50">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="Close up of seared pink duck breast sliced on slate with fig reduction sauce." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIhZfrpBwilhgBb9lczzYUUZaxAGI7y2ZKtUM-64xYLhWD4zAEsvq_ZTkGnYefGhZ_egExOdk4oCufW5brLFctXQ_40PoXrSLTvxHee9jxCpxWrAfltH9xMRKOQLDIkZs6oz4yyv3xWFNTrwulOz2VgapjAClob8fk7YAhqkfQ_eqA4D4s3K7xONCSk8WQJFwFB9_XMOFEPO5UuBBrionoxPr8gQ4rRMW78tJRmW4c">
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-white/95 text-orange-600 border border-orange-100 text-[11px] font-bold shadow-xs">
+                  Signature
+                </span>
+<span class="px-2.5 py-1 rounded-full bg-white/95 text-gray-700 border border-gray-100 text-[11px] font-medium shadow-xs">
+                  Sans Gluten
+                </span>
+</div>
+<button aria-label="Favoris" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/95 text-gray-400 hover:text-orange-500 shadow-xs flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-5 flex flex-col flex-grow justify-between gap-4">
+<div class="space-y-2">
+<div class="flex items-start justify-between gap-2">
+<h3 class="font-display font-bold text-lg text-charcoal group-hover:text-orange-600 transition-colors">
+                    Magret de Canard aux Figues
+                  </h3>
+<span class="shrink-0 text-orange-500 font-extrabold text-lg">
+                    34,00 €
+                  </span>
+</div>
+<p class="text-sm text-gray-500 leading-relaxed">
+                  Canard fermier du Gers rôti sur coffre, figues de Solliès au miel de châtaignier, mousseline de panais et réduction Sichuan.
+                </p>
+</div>
+<div class="pt-3 flex items-center justify-between border-t border-gray-100">
+<div class="flex items-center gap-1.5 text-gray-400 text-xs font-medium">
+<span class="material-symbols-outlined text-[16px] text-orange-400">schedule</span>
+<span class="">20 min prep</span>
+</div>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-500 text-orange-600 hover:text-white font-semibold text-xs transition-all duration-200 active:scale-95 border border-orange-200/60 hover:border-transparent" onclick="addItemToCart('Magret de Canard aux Figues', 34.00)">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span class="">Ajouter au Panier</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Dish 2: Bar de Ligne Sauvage -->
+<article class="group relative flex flex-col justify-between rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-gray-50">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="Pan-seared sea bass fillet with crispy skin, yuzu emulsion and glazed baby fennel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUqzx5ChMdBDNCFaNYUw_0ZGcKF1y2L7wxUFR-ad6WqhZHo_Ai645Q573AaIqNEtLfo_t2uXxrS2ydxVuFONdzQn5sY8iiWqNM1byff8SoqithD3E6qGuwjFy-quIpltkGkHlbaV4_B3kVKGpph6h0IcGENZDYRNiqdpYsEY3LC5N88GGolZK_PL-SsqNtg03MuzqdtsxXiGaCHbeO4tO32K_vd6C4tO2Q2ewWRkg6">
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-white/95 text-blue-600 border border-blue-100 text-[11px] font-bold shadow-xs">
+                  Pêche Durable
+                </span>
+<span class="px-2.5 py-1 rounded-full bg-white/95 text-orange-600 border border-orange-100 text-[11px] font-bold shadow-xs">
+                  Coup de Cœur
+                </span>
+</div>
+<button aria-label="Favoris" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/95 text-gray-400 hover:text-orange-500 shadow-xs flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-5 flex flex-col flex-grow justify-between gap-4">
+<div class="space-y-2">
+<div class="flex items-start justify-between gap-2">
+<h3 class="font-display font-bold text-lg text-charcoal group-hover:text-orange-600 transition-colors">
+                    Bar de Ligne &amp; Émulsion Yuzu
+                  </h3>
+<span class="shrink-0 text-orange-500 font-extrabold text-lg">
+                    38,50 €
+                  </span>
+</div>
+<p class="text-sm text-gray-500 leading-relaxed">
+                  Petite traîne bretonne, peau croustillante, fenouil croquant à l'aneth maritime, tombée de salicornes et beurre fouetté.
+                </p>
+</div>
+<div class="pt-3 flex items-center justify-between border-t border-gray-100">
+<div class="flex items-center gap-1.5 text-gray-400 text-xs font-medium">
+<span class="material-symbols-outlined text-[16px] text-orange-400">schedule</span>
+<span class="">15 min prep</span>
+</div>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-500 text-orange-600 hover:text-white font-semibold text-xs transition-all duration-200 active:scale-95 border border-orange-200/60 hover:border-transparent" onclick="addItemToCart('Bar de Ligne &amp; Émulsion Yuzu', 38.50)">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span class="">Ajouter au Panier</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Dish 3: Risotto Morilles & Truffe -->
+<article class="group relative flex flex-col justify-between rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-gray-50">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="Creamy dark truffle and morel mushroom risotto with shaved black truffle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg49NxN_dwapqulD87yEQjLKdqlG_ksZc-aLjnEDH37y0rripqBRcEOP9qplhdFTP1Ri86Ndl2LC-iKV-SJ_qqCDhOFwkmy5ljR-E-CmRH6gpZV1ui9posrJZya6N8kHUPzXCa5c3fmhfiuNbPUAJs_pwaWUtljHEuhOgRY8mI9TmS-hefuPdqdhKI3IjgpsqLgcKD4RzqcSclI5Q4uExLQluqZmft9R4mggfBuTmL">
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-white/95 text-emerald-600 border border-emerald-100 text-[11px] font-bold shadow-xs">
+                  Végétarien
+                </span>
+<span class="px-2.5 py-1 rounded-full bg-white/95 text-emerald-600 border border-emerald-100 text-[11px] font-bold shadow-xs">
+                  100% Bio
+                </span>
+</div>
+<button aria-label="Favoris" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/95 text-gray-400 hover:text-orange-500 shadow-xs flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-5 flex flex-col flex-grow justify-between gap-4">
+<div class="space-y-2">
+<div class="flex items-start justify-between gap-2">
+<h3 class="font-display font-bold text-lg text-charcoal group-hover:text-orange-600 transition-colors">
+                    Risotto Morilles &amp; Truffe
+                  </h3>
+<span class="shrink-0 text-orange-500 font-extrabold text-lg">
+                    29,00 €
+                  </span>
+</div>
+<p class="text-sm text-gray-500 leading-relaxed">
+                  Riz Carnaroli lié au Parmesan 30 mois, morilles fraîches déglacées au vin jaune du Jura et lamelles de truffe noire fraîche.
+                </p>
+</div>
+<div class="pt-3 flex items-center justify-between border-t border-gray-100">
+<div class="flex items-center gap-1.5 text-gray-400 text-xs font-medium">
+<span class="material-symbols-outlined text-[16px] text-orange-400">schedule</span>
+<span class="">15 min prep</span>
+</div>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-500 text-orange-600 hover:text-white font-semibold text-xs transition-all duration-200 active:scale-95 border border-orange-200/60 hover:border-transparent" onclick="addItemToCart('Risotto Morilles &amp; Truffe', 29.00)">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span class="">Ajouter au Panier</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Dish 4: Saint-Jacques & Caviar -->
+<article class="group relative flex flex-col justify-between rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-gray-50">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="Delicate scallop carpaccio thinly arranged with lime pearls and micro flowers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTIyXWeNczz5cQIInR_GFT6b5rsfhjHSpbBMXQFqZxluDKEQq-xyTO1SFb3pXuvgJG8LsD91LUOoVxVhSaLGkPhOZNIJitRJ92galChc2zw0XGNJQP9TV9VdhC2fQi9y1FMGa9RcRXXtLrst8ztr03dZvUJ4D7tVXJNqPJvKppyJOc8lBC73pZLj81pwwD07hyyJUmjFsmAsPyeM1X-7u7niJG3uiQlCk4DBAQtli8">
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-white/95 text-charcoal border border-gray-200 text-[11px] font-bold shadow-xs">
+                  Entrée Froide
+                </span>
+</div>
+<button aria-label="Favoris" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/95 text-gray-400 hover:text-orange-500 shadow-xs flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-5 flex flex-col flex-grow justify-between gap-4">
+<div class="space-y-2">
+<div class="flex items-start justify-between gap-2">
+<h3 class="font-display font-bold text-lg text-charcoal group-hover:text-orange-600 transition-colors">
+                    Saint-Jacques &amp; Caviar Citron
+                  </h3>
+<span class="shrink-0 text-orange-500 font-extrabold text-lg">
+                    26,00 €
+                  </span>
+</div>
+<p class="text-sm text-gray-500 leading-relaxed">
+                  Coquilles de la Baie de Saint-Brieuc tranchées minute, perles de citron caviar d'Occitanie et huile fumée au bois de hêtre.
+                </p>
+</div>
+<div class="pt-3 flex items-center justify-between border-t border-gray-100">
+<div class="flex items-center gap-1.5 text-gray-400 text-xs font-medium">
+<span class="material-symbols-outlined text-[16px] text-orange-400">schedule</span>
+<span class="">Frais • Immédiat</span>
+</div>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-500 text-orange-600 hover:text-white font-semibold text-xs transition-all duration-200 active:scale-95 border border-orange-200/60 hover:border-transparent" onclick="addItemToCart('Saint-Jacques &amp; Caviar Citron', 26.00)">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span class="">Ajouter au Panier</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Dish 5: Tarte Fine Poire Chocolat -->
+<article class="group relative flex flex-col justify-between rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-gray-50">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="Exquisite warm pear thin tart with caramelized edges and dark chocolate drizzle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe1BvjDSeJXawMiNDewhCSa6APkcFBr6UGTBy12Z_JtCCzuyp_D3ez9wzhTcYwL7fHSLQvLGt-3zLZnuNpiVHJba4D-0fOryg6YdzusnXANJrwE2MdOVBuFQS5UTx_F8VEpI7n7HqJvIm8snvgFC4HTYATK037haF1ZCkTDfeUNvCtf-HVE0dPF40SfH2v3L1-862vPZnC-WHl5n6Ha4daqQuaWQYpmM5vdNoBeg1o">
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-white/95 text-amber-700 border border-amber-200 text-[11px] font-bold shadow-xs">
+                  Grand Cru Valrhona
+                </span>
+</div>
+<button aria-label="Favoris" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/95 text-gray-400 hover:text-orange-500 shadow-xs flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-5 flex flex-col flex-grow justify-between gap-4">
+<div class="space-y-2">
+<div class="flex items-start justify-between gap-2">
+<h3 class="font-display font-bold text-lg text-charcoal group-hover:text-orange-600 transition-colors">
+                    Tarte Fine Poires &amp; Chocolat
+                  </h3>
+<span class="shrink-0 text-orange-500 font-extrabold text-lg">
+                    18,00 €
+                  </span>
+</div>
+<p class="text-sm text-gray-500 leading-relaxed">
+                  Poires Conférence caramélisées minute sur feuilletage pur beurre, ganache Guanaja 70% et crème fraîche d'Isigny AOP.
+                </p>
+</div>
+<div class="pt-3 flex items-center justify-between border-t border-gray-100">
+<div class="flex items-center gap-1.5 text-gray-400 text-xs font-medium">
+<span class="material-symbols-outlined text-[16px] text-orange-400">schedule</span>
+<span class="">Dessert Minute</span>
+</div>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-500 text-orange-600 hover:text-white font-semibold text-xs transition-all duration-200 active:scale-95 border border-orange-200/60 hover:border-transparent" onclick="addItemToCart('Tarte Fine Poires &amp; Chocolat', 18.00)">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span class="">Ajouter au Panier</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Dish 6: Accord Mets & Vins -->
+<article class="group relative flex flex-col justify-between rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-gray-50">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="Two premium dark bottles of French wine beside filled crystal glasses." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfWx3AI_w_42NLv98br8lJ2DQfl8c7NDQ0-SsoPytx3uKn8rTZcPH6j0ZSF_j05iF9-RCDnInvYDOsANFwW7JiYWBHBJmToTpM9gv9hdQpxOua8f4uopyu3knbSos397UDPop3JoPQ58wGt8hL3kddVrrbf1yx3RjkKJRIda2bgv5kBWeU-ei0Fpos0w1-Yg2ZTVGbv-Hv3ETL4jvT9jJfCVuVBglDPM4Zw8lyal4i">
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-white/95 text-purple-700 border border-purple-200 text-[11px] font-bold shadow-xs">
+                  Sélection Sommelier
+                </span>
+</div>
+<button aria-label="Favoris" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/95 text-gray-400 hover:text-orange-500 shadow-xs flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-5 flex flex-col flex-grow justify-between gap-4">
+<div class="space-y-2">
+<div class="flex items-start justify-between gap-2">
+<h3 class="font-display font-bold text-lg text-charcoal group-hover:text-orange-600 transition-colors">
+                    Duo Nectars Naturels &amp; Bio
+                  </h3>
+<span class="shrink-0 text-orange-500 font-extrabold text-lg">
+                    46,00 €
+                  </span>
+</div>
+<p class="text-sm text-gray-500 leading-relaxed">
+                  1 Bouteille Domaine de la Romanée biodynamique (Rouge 75cl) &amp; 1 Bouteille Menetou-Salon silex (Blanc 75cl).
+                </p>
+</div>
+<div class="pt-3 flex items-center justify-between border-t border-gray-100">
+<div class="flex items-center gap-1.5 text-gray-400 text-xs font-medium">
+<span class="material-symbols-outlined text-[16px] text-orange-400">wine_bar</span>
+<span class="">Cave tempérée</span>
+</div>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-500 text-orange-600 hover:text-white font-semibold text-xs transition-all duration-200 active:scale-95 border border-orange-200/60 hover:border-transparent" onclick="addItemToCart('Duo Nectars Naturels &amp; Bio', 46.00)">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span class="">Ajouter au Panier</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- 6. Checkout & Order Flow (Subtle soft gray background with pure white cards) -->
+<section class="w-full py-16 bg-gray-50/70 border-t border-gray-100" id="panier-section">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+<!-- Section Title -->
+<div class="space-y-1">
+<span class="text-xs font-bold text-orange-500 uppercase tracking-wider">Finalisation de Commande</span>
+<h2 class="font-display font-bold text-3xl text-charcoal">Votre Table Gastronomique</h2>
+</div>
+<!-- 2-Column Responsive Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left: Details & Payment (7 Cols) -->
+<div class="lg:col-span-7 space-y-6">
+<!-- Step 1: Livraison Card -->
+<div class="p-6 sm:p-8 rounded-2xl bg-white border border-gray-200 shadow-sm space-y-6">
+<div class="flex items-center justify-between pb-4 border-b border-gray-100">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold text-sm shadow-xs">
+                    1
+                  </span>
+<h3 class="font-display font-bold text-xl text-charcoal">Coordonnées &amp; Lieu de Dégustation</h3>
+</div>
+<span class="text-xs font-semibold text-emerald-600 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">lock</span> Chiffrement SSL
+                </span>
+</div>
+<form class="space-y-4" onsubmit="return false;">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-gray-700 flex items-center justify-between">
+<span class="">Nom &amp; Prénom *</span>
+<span class="material-symbols-outlined text-[16px] text-emerald-500">check_circle</span>
+</label>
+<input class="w-full bg-white px-4 py-3 rounded-xl border border-gray-200 text-charcoal text-sm focus:outline-none focus:ring-2 focus:ring-orange-100 focus:border-orange-500 transition-all shadow-xs" type="text" value="Alexandre de Montmirail">
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-gray-700 flex items-center justify-between">
+<span class="">Téléphone *</span>
+<span class="material-symbols-outlined text-[16px] text-emerald-500">check_circle</span>
+</label>
+<input class="w-full bg-white px-4 py-3 rounded-xl border border-gray-200 text-charcoal text-sm focus:outline-none focus:ring-2 focus:ring-orange-100 focus:border-orange-500 transition-all shadow-xs" type="tel" value="+33 6 42 18 90 24">
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-gray-700 flex items-center justify-between">
+<span class="">Adresse de Livraison (Paris &amp; Proche Banlieue) *</span>
+<span class="material-symbols-outlined text-[16px] text-emerald-500">check_circle</span>
+</label>
+<div class="relative">
+<input class="w-full bg-white pl-11 pr-4 py-3 rounded-xl border border-gray-200 text-charcoal text-sm focus:outline-none focus:ring-2 focus:ring-orange-100 focus:border-orange-500 transition-all shadow-xs" type="text" value="24 Rue de Turenne, 3ème Étage (Code 45B), 75004 Paris">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-[20px]">
+                      location_on
+                    </span>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-gray-700">Instructions au Chef ou Allergies éventuelles</label>
+<textarea class="w-full bg-white px-4 py-3 rounded-xl border border-gray-200 text-charcoal placeholder:text-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-orange-100 focus:border-orange-500 transition-all shadow-xs resize-none" rows="2">Allergie légère aux fruits à coque pour l'un des convives. Merci d'inclure des couverts compostables de luxe.</textarea>
+</div>
+<!-- Delivery Time Slot Selector -->
+<div class="space-y-2 pt-2">
+<label class="text-xs font-semibold text-gray-700">Créneau de Dégustation Souhaité</label>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+<label class="flex flex-col p-3.5 rounded-xl bg-orange-50/60 border-2 border-orange-500 cursor-pointer transition-all shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-orange-600 uppercase">Au plus vite</span>
+<input checked="" class="accent-orange-500" name="creneau" type="radio">
+</div>
+<span class="font-bold text-charcoal text-sm mt-1">19h45 - 20h15</span>
+<span class="text-xs text-gray-500">30 min estimé</span>
+</label>
+<label class="flex flex-col p-3.5 rounded-xl bg-white hover:bg-gray-50 border border-gray-200 cursor-pointer transition-all shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-xs font-medium text-gray-500 uppercase">Dîner Médian</span>
+<input class="accent-orange-500" name="creneau" type="radio">
+</div>
+<span class="font-bold text-charcoal text-sm mt-1">20h30 - 21h00</span>
+<span class="text-xs text-gray-500">Sur réservation</span>
+</label>
+<label class="flex flex-col p-3.5 rounded-xl bg-white hover:bg-gray-50 border border-gray-200 cursor-pointer transition-all shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-xs font-medium text-gray-500 uppercase">Tardif</span>
+<input class="accent-orange-500" name="creneau" type="radio">
+</div>
+<span class="font-bold text-charcoal text-sm mt-1">21h30 - 22h00</span>
+<span class="text-xs text-gray-500">Service nocturne</span>
+</label>
+</div>
+</div>
+</form>
+</div>
+<!-- Step 2: Paiement Sécurisé Card -->
+<div class="p-6 sm:p-8 rounded-2xl bg-white border border-gray-200 shadow-sm space-y-6">
+<div class="flex items-center justify-between pb-4 border-b border-gray-100">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-gray-100 text-charcoal flex items-center justify-center font-bold text-sm">
+                    2
+                  </span>
+<h3 class="font-display font-bold text-xl text-charcoal">Mode de Règlement</h3>
+</div>
+<div class="flex items-center gap-2 text-gray-400">
+<span class="material-symbols-outlined text-[20px]">credit_card</span>
+<span class="material-symbols-outlined text-[20px]">contactless</span>
+</div>
+</div>
+<!-- Payment Method Tabs -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+<button class="p-3.5 rounded-xl bg-orange-50/60 border-2 border-orange-500 text-left flex flex-col justify-between gap-2.5 transition-all shadow-xs" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="material-symbols-outlined text-orange-500 text-[22px]">credit_card</span>
+<span class="w-2.5 h-2.5 rounded-full bg-orange-500"></span>
+</div>
+<div>
+<div class="text-sm font-bold text-charcoal">Carte Bancaire</div>
+<div class="text-xs text-gray-500">Visa, Mastercard, Amex</div>
+</div>
+</button>
+<button class="p-3.5 rounded-xl bg-white hover:bg-gray-50 border border-gray-200 text-left flex flex-col justify-between gap-2.5 transition-all shadow-xs" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="material-symbols-outlined text-gray-700 text-[22px]">phone_iphone</span>
+<span class="w-2.5 h-2.5 rounded-full bg-gray-300"></span>
+</div>
+<div>
+<div class="text-sm font-semibold text-charcoal">Apple / Google Pay</div>
+<div class="text-xs text-gray-500">1-clic biométrique</div>
+</div>
+</button>
+<button class="p-3.5 rounded-xl bg-white hover:bg-gray-50 border border-gray-200 text-left flex flex-col justify-between gap-2.5 transition-all shadow-xs" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="material-symbols-outlined text-gray-700 text-[22px]">handshake</span>
+<span class="w-2.5 h-2.5 rounded-full bg-gray-300"></span>
+</div>
+<div>
+<div class="text-sm font-semibold text-charcoal">À la Réception</div>
+<div class="text-xs text-gray-500">Terminal TPE ou Espèces</div>
+</div>
+</button>
+</div>
+<!-- Card Input Sub-Form -->
+<div class="p-4 rounded-xl bg-gray-50 border border-gray-200/80 space-y-3">
+<div class="space-y-1">
+<label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Numéro de Carte de Crédit</label>
+<div class="relative">
+<input class="w-full bg-white px-4 py-2.5 rounded-lg border border-gray-200 text-charcoal text-sm focus:outline-none focus:ring-2 focus:ring-orange-100 focus:border-orange-500 font-mono" type="text" value="•••• •••• •••• 4291">
+<span class="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded">VISA PREMIER</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="space-y-1">
+<label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Date d'Expiration</label>
+<input class="w-full bg-white px-4 py-2.5 rounded-lg border border-gray-200 text-charcoal text-sm focus:outline-none focus:ring-2 focus:ring-orange-100 focus:border-orange-500 font-mono" type="text" value="08 / 27">
+</div>
+<div class="space-y-1">
+<label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Cryptogramme (CVC)</label>
+<input class="w-full bg-white px-4 py-2.5 rounded-lg border border-gray-200 text-charcoal text-sm focus:outline-none focus:ring-2 focus:ring-orange-100 focus:border-orange-500 font-mono" type="password" value="•••">
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Order Summary Sticky Card (5 Cols) -->
+<aside class="lg:col-span-5 sticky top-28 space-y-5">
+<div class="p-6 sm:p-7 rounded-2xl bg-white border border-gray-200 shadow-sm space-y-6">
+<div class="flex items-center justify-between pb-3 border-b border-gray-100">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-orange-500 text-[22px]">shopping_bag</span>
+<h3 class="font-display font-bold text-lg text-charcoal">Récapitulatif de Commande</h3>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-orange-50 text-orange-600 border border-orange-200 text-xs font-bold" id="cart-counter-badge">
+                  3 mets
+                </span>
+</div>
+<!-- Cart Items List -->
+<div class="space-y-4 max-h-72 overflow-y-auto pr-1" id="cart-items-container">
+<!-- Item 1 -->
+<div class="flex items-center justify-between gap-3 pb-3 border-b border-gray-100">
+<div class="flex items-center gap-3">
+<img class="w-12 h-12 rounded-xl object-cover border border-gray-100 shadow-xs" data-alt="Duck breast thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApu8AKxnxL6pyiL-OHeeUBL7z9QIdfKZjNgSJrhOS6fPwYqVqfjfjSbUKpax9zY5AQ3mxYrEJ-lB6tMIwopt8A1aMH4MD4H1VnlvQzjvM8fkN6tDdiyr2tpHLVG8XBNVbiyN50knwmCUvsKPgRFJUqrIoDAQxQQ_zywoUgWzyEsIWmmlYE04nyF74kI-x7Y0DQNXCzgOOVJp6wYTSFf_yOLpoeblf_llXZ5GTkKOB4">
+<div>
+<h4 class="font-semibold text-charcoal text-sm leading-tight">Magret de Canard</h4>
+<span class="text-orange-500 font-bold text-xs">34,00 €</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 bg-gray-50 border border-gray-200 rounded-lg p-1">
+<button class="w-6 h-6 rounded bg-white text-gray-600 flex items-center justify-center hover:bg-gray-100 shadow-xs" type="button">
+<span class="material-symbols-outlined text-[14px]">remove</span>
+</button>
+<span class="font-bold text-xs px-1.5 text-charcoal">1</span>
+<button class="w-6 h-6 rounded bg-white text-gray-600 flex items-center justify-center hover:bg-gray-100 shadow-xs" type="button">
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between gap-3 pb-3 border-b border-gray-100">
+<div class="flex items-center gap-3">
+<img class="w-12 h-12 rounded-xl object-cover border border-gray-100 shadow-xs" data-alt="Scallop carpaccio dish thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYC5NLceOmk5F8VOD9oFz4oNh7JmfPdbEVPK2H5lgjHD1FcFT4KdUTpVS6qS2yTYqmL19CM-wnJGApNZmErXoT3v_Y4eTBrrrcEiwm7MVALsY6d3I-17ckg3tofbIpmxhiQZp34UVbqTYsq4xuJpxIAX0xNSfbmGbpKTGeBuOQ8X39AdIB6hQUFSWEFCYJjdvOTIgmWeLsgaFjOe0-48-RXy6fc0CvuGW2OBdM3C8A">
+<div>
+<h4 class="font-semibold text-charcoal text-sm leading-tight">Saint-Jacques &amp; Caviar</h4>
+<span class="text-orange-500 font-bold text-xs">26,00 €</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 bg-gray-50 border border-gray-200 rounded-lg p-1">
+<button class="w-6 h-6 rounded bg-white text-gray-600 flex items-center justify-center hover:bg-gray-100 shadow-xs" type="button">
+<span class="material-symbols-outlined text-[14px]">remove</span>
+</button>
+<span class="font-bold text-xs px-1.5 text-charcoal">1</span>
+<button class="w-6 h-6 rounded bg-white text-gray-600 flex items-center justify-center hover:bg-gray-100 shadow-xs" type="button">
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<img class="w-12 h-12 rounded-xl object-cover border border-gray-100 shadow-xs" data-alt="Pear tart thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHv6kwLz1YY6v1_-TXn9pjTqIP3jsLm2UZxKsYNMrlAaqxqIeO3bl9ZanPwCkBfhBHhCvaznHnb5cUvjRjiYBrifS_q0S5l2RlYGWd8-JF2RmQhYZFAXMdSFq78kFQzgMQD5VqydzpMAPhHRN9hT0nb7h73AsKGmBcs2yT_aohWwQcRgkuQX0zPe9DcHSlVxwxgXgAtmMhp2aeGvXS_n7M5iy0Ms2v__f29-iIJNyp">
+<div>
+<h4 class="font-semibold text-charcoal text-sm leading-tight">Tarte Fine Poires Valrhona</h4>
+<span class="text-orange-500 font-bold text-xs">18,00 €</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 bg-gray-50 border border-gray-200 rounded-lg p-1">
+<button class="w-6 h-6 rounded bg-white text-gray-600 flex items-center justify-center hover:bg-gray-100 shadow-xs" type="button">
+<span class="material-symbols-outlined text-[14px]">remove</span>
+</button>
+<span class="font-bold text-xs px-1.5 text-charcoal">1</span>
+<button class="w-6 h-6 rounded bg-white text-gray-600 flex items-center justify-center hover:bg-gray-100 shadow-xs" type="button">
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Price Breakdown -->
+<div class="space-y-2 pt-3 border-t border-gray-100 text-xs sm:text-sm">
+<div class="flex justify-between text-gray-500">
+<span class="">Sous-total des mets</span>
+<span class="text-charcoal font-semibold">78,00 €</span>
+</div>
+<div class="flex justify-between text-gray-500 items-center">
+<span class="flex items-center gap-1">
+<span class="">Livraison express sécurisée</span>
+<span class="material-symbols-outlined text-[16px] text-gray-400">help_outline</span>
+</span>
+<span class="text-emerald-600 font-bold text-xs uppercase bg-emerald-50 px-2 py-0.5 rounded">Offerte dès 50€</span>
+</div>
+<div class="flex justify-between text-gray-500">
+<span class="">Éco-packaging isotherme recyclable</span>
+<span class="text-charcoal font-semibold">0,50 €</span>
+</div>
+<div class="flex justify-between items-baseline pt-3 border-t border-gray-100">
+<div class="flex flex-col">
+<span class="font-display font-bold text-base text-charcoal">Total TTC</span>
+<span class="text-[11px] text-gray-400">TVA (10% &amp; 20%) incluse</span>
+</div>
+<div class="font-display font-extrabold text-2xl text-orange-500 tracking-tight">
+                    78,50 €
+                  </div>
+</div>
+</div>
+<!-- Primary Submit CTA -->
+<button class="w-full py-4 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-base flex items-center justify-center gap-2 shadow-sm hover:shadow-orange-200 hover:shadow-md transition-all duration-200 active:scale-[0.98]" id="confirm-order-button" onclick="triggerOrderConfirmation()" type="button">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+<span class="">Confirmer et Régler (78,50 €)</span>
+</button>
+<div class="flex items-center justify-center gap-4 text-gray-400 text-xs text-center">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-emerald-500">verified_user</span> Service sécurisé
+                </span>
+<span class="">•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-orange-500">thumb_up</span> Fraîcheur garantie
+                </span>
+</div>
+</div>
+<!-- Sommelier Callout -->
+<div class="p-4 rounded-2xl bg-white border border-gray-200 shadow-xs flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">wine_bar</span>
+</div>
+<div class="space-y-0.5 text-xs">
+<h4 class="font-bold text-charcoal">Suggestion du Sommelier</h4>
+<p class="text-gray-500">Ajoutez notre Côte-Rôtie 2020 « Ampuis » pour parfaire vos mets.</p>
+</div>
+<button aria-label="Ajouter vin suggéré" class="p-2 rounded-lg bg-gray-100 hover:bg-orange-500 hover:text-white text-gray-700 transition-colors shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</aside>
+</div>
+</div>
+</section>
+<!-- Notification Toast -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" id="order-toast">
+<div class="bg-white border border-gray-200 p-4 rounded-xl shadow-lg flex items-center gap-3 text-charcoal">
+<span class="material-symbols-outlined text-emerald-500 text-[24px]">check_circle</span>
+<div>
+<p class="font-bold text-sm text-charcoal">Plat ajouté à votre sélection !</p>
+<p class="text-xs text-gray-500">Votre récapitulatif a été mis à jour.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- 2. Clean, Elegant Minimalist Footer -->
+<footer class="w-full bg-gray-50 border-t border-gray-100 pt-16 pb-12 text-gray-600">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-gray-200">
+<!-- Brand Info -->
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="font-display font-bold text-xl text-charcoal">Tiremt <span class="text-orange-500 font-normal text-sm ml-1">• Gastronomie &amp; Terroirs</span></span>
+</div>
+<p class="text-xs sm:text-sm text-gray-500 leading-relaxed">
+            Une célébration contemporaine et épurée des terroirs français. Cuisine ouverte orchestrée avec feu, rigueur bistronomique et produits d'exception.
+          </p>
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-semibold text-charcoal shadow-xs">
+<span class="material-symbols-outlined text-amber-500 text-[16px]">stars</span>
+<span class="">Guide Michelin 2024 • Sélection</span>
+</div>
+</div>
+<!-- Addresses -->
+<div class="space-y-3">
+<h3 class="font-display font-bold text-sm text-charcoal uppercase tracking-wider">Nos Établissements</h3>
+<div class="space-y-1 text-xs sm:text-sm">
+<p class="font-semibold text-charcoal">Paris — Le Marais</p>
+<p class="text-gray-500">14 Rue Sainte-Croix de la Bretonnerie, 75004 Paris</p>
+<p class="text-gray-400">+33 (0)1 42 77 19 80</p>
+</div>
+<div class="space-y-1 text-xs sm:text-sm pt-2">
+<p class="font-semibold text-charcoal">Bordeaux — Les Chartrons</p>
+<p class="text-gray-500">28 Quai des Chartrons, 33000 Bordeaux</p>
+<p class="text-gray-400">+33 (0)5 56 01 22 40</p>
+</div>
+</div>
+<!-- Hours -->
+<div class="space-y-3">
+<h3 class="font-display font-bold text-sm text-charcoal uppercase tracking-wider">Heures de Service</h3>
+<div class="space-y-2 text-xs sm:text-sm">
+<div class="flex justify-between pb-1 border-b border-gray-200">
+<span class="text-gray-500">Mardi — Vendredi</span>
+<span class="font-medium text-charcoal">12h-14h30 • 19h30-23h</span>
+</div>
+<div class="flex justify-between pb-1 border-b border-gray-200">
+<span class="text-gray-500">Samedi — Dimanche</span>
+<span class="font-medium text-charcoal">12h30-15h • 19h-23h30</span>
+</div>
+<div class="flex justify-between text-gray-400">
+<span class="">Lundi</span>
+<span class="">Fermeture hebdomadaire</span>
+</div>
+</div>
+</div>
+<!-- Newsletter -->
+<div class="space-y-4">
+<h3 class="font-display font-bold text-sm text-charcoal uppercase tracking-wider">La Gazette Épicurienne</h3>
+<p class="text-xs sm:text-sm text-gray-500">Recevez en avant-première nos accords mets &amp; vins et tables exclusives chaque mois.</p>
+<form class="flex items-center gap-1.5" onsubmit="return false;">
+<input class="w-full bg-white px-3.5 py-2 rounded-xl border border-gray-200 text-xs sm:text-sm text-charcoal placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-100 focus:border-orange-500 shadow-xs" placeholder="Votre email..." type="email">
+<button class="px-3.5 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-xl text-xs font-bold transition-colors shadow-xs" type="submit">
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</form>
+<div class="flex items-center gap-2 pt-1">
+<a aria-label="Instagram" class="w-8 h-8 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-500 hover:text-orange-500 hover:border-orange-200 transition-colors shadow-xs" href="#">
+<span class="material-symbols-outlined text-[16px]">photo_camera</span>
+</a>
+<a aria-label="Facebook" class="w-8 h-8 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-500 hover:text-orange-500 hover:border-orange-200 transition-colors shadow-xs" href="#">
+<span class="material-symbols-outlined text-[16px]">public</span>
+</a>
+<a aria-label="Contact" class="w-8 h-8 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-500 hover:text-orange-500 hover:border-orange-200 transition-colors shadow-xs" href="#">
+<span class="material-symbols-outlined text-[16px]">mail</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Legal Footnote -->
+<div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-400 text-center md:text-left">
+<div class="">© 2024 Tiremt SAS. Tous droits réservés. L'abus d'alcool est dangereux pour la santé.</div>
+<div class="flex flex-wrap items-center justify-center gap-6">
+<a class="hover:text-charcoal transition-colors" href="#">Mentions Légales &amp; Allergènes</a>
+<a class="hover:text-charcoal transition-colors" href="#">Confidentialité</a>
+<a class="hover:text-charcoal transition-colors" href="#">CGV &amp; Réservations</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    // Micro-interactions for Cart Add & Toast
+    function addItemToCart(dishName, price) {
+      const toast = document.getElementById('order-toast');
+      if (toast) {
+        toast.classList.remove('translate-y-24', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+        setTimeout(() => {
+          toast.classList.remove('translate-y-0', 'opacity-100');
+          toast.classList.add('translate-y-24', 'opacity-0');
+        }, 2200);
+      }
+    }
+
+    function triggerOrderConfirmation() {
+      const btn = document.getElementById('confirm-order-button');
+      if (btn) {
+        btn.innerHTML = `<span class="material-symbols-outlined animate-spin text-[20px]">progress_activity</span> Envoi en cuisine...`;
+        btn.classList.add('opacity-80');
+        setTimeout(() => {
+          btn.innerHTML = `<span class="material-symbols-outlined text-[20px]">check_circle</span> Commande Transmise au Chef !`;
+          btn.classList.remove('bg-orange-500', 'opacity-80');
+          btn.classList.add('bg-emerald-600', 'hover:bg-emerald-700');
+        }, 1500);
+      }
+    }
+
+    // Category Pill Active Toggle
+    document.querySelectorAll('.category-pill').forEach(pill => {
+      pill.addEventListener('click', function() {
+        document.querySelectorAll('.category-pill').forEach(p => {
+          p.classList.remove('bg-orange-500', 'text-white', 'shadow-xs');
+          p.classList.add('bg-gray-100', 'text-gray-700');
+        });
+        this.classList.remove('bg-gray-100', 'text-gray-700');
+        this.classList.add('bg-orange-500', 'text-white', 'shadow-xs');
+      });
+    });
+  </script>
+
+
+</body></html>
