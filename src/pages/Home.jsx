@@ -6,6 +6,7 @@ import { addToCart } from '../redux/cartSlice'
 import PlatCard from '../components/PlatCard'
 import Loader from '../components/Loader'
 import ErrorMessage from '../components/ErrorMessage'
+import TeamSection from '../components/TeamSection'
 
 const Home = () => {
   const dispatch = useDispatch()
@@ -470,7 +471,12 @@ const Home = () => {
       </section>
 
       {/* ============================================================
-          6. TEASER LOCALISATION & HORAIRES : Restaurant Tiremt Tiznit
+          6. SECTION ÉQUIPE : Les Artisans & Visages de Tiremt
+          ============================================================ */}
+      <TeamSection />
+
+      {/* ============================================================
+          7. TEASER LOCALISATION & HORAIRES : Restaurant Tiremt Tiznit
           ============================================================ */}
       <section className="location-teaser-box my-5" id="localisation">
         <div className="row align-items-center g-4">
