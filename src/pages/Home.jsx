@@ -31,7 +31,7 @@ const Home = () => {
       nom: 'Tagine de Poulet aux Citrons Confits & Olives',
       prix: 85,
       categorie: 'Plats Principaux',
-      image: 'https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=800&q=80',
+      image: '/tagine-poulet.jpg',
       description: 'Poulet fermier mijoté lentement aux épices de Fès, safran pur de Taliouine, citrons beldi confits et olives rouges de Marrakech.',
       tempsPrep: '25 min',
       rating: 4.9,
@@ -63,7 +63,7 @@ const Home = () => {
       title: 'Plats Principaux',
       tagline: 'Tajines au feu de bois & Couscous',
       count: plats.filter((p) => p.categorie === 'Plats Principaux').length || 3,
-      image: 'https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=600&q=80',
+      image: '/tagine-poulet.jpg',
       description: 'Mijotés selon les préceptes ancestraux avec viandes tendres et légumes du terroir.',
     },
     {
@@ -142,7 +142,7 @@ const Home = () => {
             <div className="position-relative d-inline-block w-100">
               <div className="rounded-4 overflow-hidden shadow-lg border border-2 border-white bg-light">
                 <img
-                  src="https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=800&q=80"
+                  src="/tagine-poulet.jpg"
                   alt="Tagine Gastronomique Marocain - Tiremt Tiznit"
                   className="w-100 h-100 object-fit-cover"
                   style={{ maxHeight: '460px', minHeight: '340px' }}

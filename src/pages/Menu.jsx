@@ -8,20 +8,25 @@ import ErrorMessage from '../components/ErrorMessage'
 
 const Menu = () => {
   const dispatch = useDispatch()
+  // [E. Redux Selectors] : Récupération dyal la liste des plats, le statut ('idle'|'pending'|'fulfilled') w l'erreur
   const plats = useSelector(selectAllPlats)
   const status = useSelector(selectMenuStatus)
   const error = useSelector(selectMenuError)
 
+  // [B. useState] : États locaux pour le texte de recherche et la catégorie active
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('Tous')
 
+  // [A. useEffect pour chargement initial] :
+  // Ki-t-exécuta une seule fois au montage. Ila kan status 'idle', ki-lancer le thunk fetchPlats()
   useEffect(() => {
     if (status === 'idle') {
       dispatch(fetchPlats())
     }
   }, [status, dispatch])
 
-  // Extract dynamic list of categories from existing dishes
+  // [A & B. useMemo pour l'optimisation des performances] :
+  // Extraction dynamique des catégories uniques existantes dans la base (évite les doublons)
   const categories = useMemo(() => {
     const list = ['Tous']
     plats.forEach((p) => {
@@ -32,7 +37,9 @@ const Menu = () => {
     return list
   }, [plats])
 
-  // Filter dishes by search input and category
+  // [B. Double Filtrage dynamique (Recherche + Catégorie)] :
+  // useMemo ki-recouvre les plats filtrés sans bloquer le thread principal.
+  // Ki-filtrer par catégorie choisie ET par mot-clé (nom ou description du plat insensible à la casse)
   const filteredPlats = useMemo(() => {
     return plats.filter((plat) => {
       const matchCategory =

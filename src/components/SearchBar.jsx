@@ -1,5 +1,10 @@
 import React, { useEffect, useRef } from 'react'
 
+// [A. Props & Lifting State Up] :
+// SearchBar composant réutilisable ki-akhod les props mn Menu.jsx:
+// - searchTerm & onSearchChange: bach n-synchronisiw l-ktba dyal l-user
+// - selectedCategory & onCategoryChange: bach n-3rfou la catégorie choisie
+// - categories: tableau dyal les catégories li kan-boucliwh b .map()
 const SearchBar = ({
   searchTerm,
   onSearchChange,
@@ -9,7 +14,7 @@ const SearchBar = ({
 }) => {
   const inputRef = useRef(null)
 
-  // Support ⌘K / Ctrl+K keyboard shortcut
+  // [A. useEffect] : Support raccourci clavier ⌘K / Ctrl+K bach l-curseur ymchi direct l l-input
   useEffect(() => {
     const handleKeyDown = (e) => {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
@@ -18,6 +23,7 @@ const SearchBar = ({
       }
     }
     window.addEventListener('keydown', handleKeyDown)
+    // Cleanup function : bach n-ms7ou l'écouteur d l'événement mli le composant ki-t-démonter
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [])
 

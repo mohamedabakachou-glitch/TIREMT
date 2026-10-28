@@ -1,7 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import api from '../services/api'
 
-// createAsyncThunk kat-gérer 3 d les états: pending (loading), fulfilled (succès), rejected (erreur)
+// [E. Redux Toolkit : createAsyncThunk pour le menu] :
+// Hna createAsyncThunk kat-sift requête GET l l'API bach t-jib ga3 les plats du menu.
+// Kat-gérer automatiquement 3 d les états d la promesse :
+// - pending : en cours de chargement
+// - fulfilled : succès avec les données en action.payload
+// - rejected : échec avec l'erreur passée par rejectWithValue
 export const fetchPlats = createAsyncThunk(
   'menu/fetchPlats',
   async (_, { rejectWithValue }) => {
@@ -14,6 +19,7 @@ export const fetchPlats = createAsyncThunk(
   }
 )
 
+// Thunk bach n-jibou les détails d'un seul plat par son ID (:id li f l'URL)
 export const fetchPlatById = createAsyncThunk(
   'menu/fetchPlatById',
   async (id, { rejectWithValue }) => {

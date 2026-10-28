@@ -22,10 +22,17 @@ const initialState = {
   items: loadInitialCart(),
 }
 
+// [E. Redux Toolkit : createSlice] :
+// createSlice kat-gérer lina l-état global dyal l-panier, kat-générer les actions w reducers auto
+// bla ma n-diro l-code t-twil d Redux l-9dim (switch/case w action types).
 export const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
+    // 1. addToCart : Ki-stqbel plat f action.payload
+    // Ki-qelleb wach l-plat deja kayn f l-panier (find).
+    // - Ila deja kayn : ki-zid ghir f la quantité dyalo
+    // - Ila jdid : ki-poushih f tableau items avec quantité = 1
     addToCart: (state, action) => {
       const plat = action.payload
       const existing = state.items.find((item) => String(item.id) === String(plat.id))
@@ -45,12 +52,15 @@ export const cartSlice = createSlice({
       saveCartToStorage(state.items)
     },
 
+    // 2. removeFromCart : Ki-hayed un article par son ID avec .filter()
     removeFromCart: (state, action) => {
       const id = action.payload
       state.items = state.items.filter((item) => String(item.id) !== String(id))
       saveCartToStorage(state.items)
     },
 
+    // 3. updateQuantity : Ki-modifier la quantité dyal un article précis (+ ou -)
+    // Ila kant la nouvelle quantité <= 0, ki-ms7ou auto mn l-panier
     updateQuantity: (state, action) => {
       const { id, quantity } = action.payload
       const item = state.items.find((i) => String(i.id) === String(id))
@@ -65,6 +75,7 @@ export const cartSlice = createSlice({
       saveCartToStorage(state.items)
     },
 
+    // 4. clearCart : Ki-vidé l-panier kamel mli la commande kat-valida b succès
     clearCart: (state) => {
       state.items = []
       saveCartToStorage(state.items)
@@ -72,15 +83,18 @@ export const cartSlice = createSlice({
   },
 })
 
+// Export automatique d les actions créées par Redux Toolkit
 export const { addToCart, removeFromCart, updateQuantity, clearCart } = cartSlice.actions
 
-// Selectors
+// [E. Selectors pour les valeurs dérivées] :
+// Hado des fonctions pures li kan-3tiwhom l useSelector() bach n-jibo données pré-calculées:
 export const selectCartItems = (state) => state.cart.items
 
+// selectCartCount : Somme totale des quantités des articles dans le panier
 export const selectCartCount = (state) =>
   state.cart.items.reduce((total, item) => total + item.quantity, 0)
 
-// Hada selector ki-hseb l-total d l-panier b reduce (prix * quantite)
+// selectCartTotal : Calcul automatique du prix total du panier via .reduce() (prix * quantite)
 export const selectCartTotal = (state) =>
   state.cart.items.reduce((total, item) => total + item.prix * item.quantity, 0)
 

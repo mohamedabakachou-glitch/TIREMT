@@ -1,17 +1,44 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchOrders, selectOrders, selectOrderFetchStatus } from '../redux/orderSlice'
+import { fetchOrders, deleteOrder, updateOrder, selectOrders, selectOrderFetchStatus } from '../redux/orderSlice'
 import Loader from '../components/Loader'
 
 const OrderHistory = () => {
   const dispatch = useDispatch()
   const orders = useSelector(selectOrders)
   const fetchStatus = useSelector(selectOrderFetchStatus)
+  const [feedback, setFeedback] = useState(null)
 
   useEffect(() => {
     dispatch(fetchOrders())
   }, [dispatch])
+
+  const showToast = (msg) => {
+    setFeedback(msg)
+    setTimeout(() => setFeedback(null), 3000)
+  }
+
+  const handleDelete = async (id) => {
+    if (window.confirm(`Confirmez-vous l'annulation de la commande #${id} ?`)) {
+      try {
+        await dispatch(deleteOrder(id)).unwrap()
+        showToast(`Commande #${id} annulée avec succès (DELETE).`)
+      } catch (err) {
+        showToast(`Erreur lors de l'annulation : ${err}`)
+      }
+    }
+  }
+
+  const handleAdvanceStatus = async (order) => {
+    const nextStatus = order.statut === 'En préparation' ? 'En route' : order.statut === 'En route' ? 'Livré' : 'En préparation'
+    try {
+      await dispatch(updateOrder({ id: order.id, updates: { statut: nextStatus } })).unwrap()
+      showToast(`Statut de la commande #${order.id} mis à jour : "${nextStatus}" (PATCH).`)
+    } catch (err) {
+      showToast(`Erreur lors de la mise à jour : ${err}`)
+    }
+  }
 
   const getStatusBadge = (status) => {
     switch (status) {
@@ -46,6 +73,14 @@ const OrderHistory = () => {
           </Link>
         </div>
       </div>
+
+      {/* Toast Feedback for CRUD actions */}
+      {feedback && (
+        <div className="toast-notice alert alert-dark text-white border-0 shadow-lg d-flex align-items-center gap-2 p-3" role="alert">
+          <i className="bi bi-info-circle-fill text-warning fs-5"></i>
+          <div>{feedback}</div>
+        </div>
+      )}
 
       {fetchStatus === 'pending' && <Loader message="Récupération de l'historique des commandes..." />}
 
@@ -128,13 +163,38 @@ const OrderHistory = () => {
                   </div>
                 </div>
 
-                {/* Footer card */}
-                <div className="card-footer bg-white border-top p-3.5 d-flex justify-content-between align-items-center">
-                  <div className="small text-muted">
-                    Livraison : {order.fraisLivraison === 0 ? 'Gratuite' : `${order.fraisLivraison} DH`}
+                {/* Footer card with CRUD Actions */}
+                <div className="card-footer bg-white border-top p-3.5 d-flex flex-column gap-2">
+                  <div className="d-flex justify-content-between align-items-center">
+                    <div className="small text-muted">
+                      Livraison : {order.fraisLivraison === 0 ? 'Gratuite' : `${order.fraisLivraison} DH`}
+                    </div>
+                    <div className="fw-bold fs-5 text-dark font-heading">
+                      Total : <span className="text-warning">{order.total} DH</span>
+                    </div>
                   </div>
-                  <div className="fw-bold fs-5 text-dark font-heading">
-                    Total : <span className="text-warning">{order.total} DH</span>
+
+                  {/* Actions CRUD (PATCH & DELETE) */}
+                  <div className="d-flex justify-content-end gap-2 pt-2 border-top border-light">
+                    <button
+                      type="button"
+                      className="btn btn-sm btn-outline-secondary rounded-pill px-3 py-1 d-inline-flex align-items-center gap-1"
+                      onClick={() => handleAdvanceStatus(order)}
+                      title="Mettre à jour le statut (PATCH)"
+                    >
+                      <i className="bi bi-arrow-repeat"></i>
+                      <span>Changer statut</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      className="btn btn-sm btn-outline-danger rounded-pill px-3 py-1 d-inline-flex align-items-center gap-1"
+                      onClick={() => handleDelete(order.id)}
+                      title="Annuler cette commande (DELETE)"
+                    >
+                      <i className="bi bi-trash3"></i>
+                      <span>Annuler</span>
+                    </button>
                   </div>
                 </div>
               </div>

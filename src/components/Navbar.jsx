@@ -1,16 +1,20 @@
 import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+// [E. Redux Toolkit] : useSelector bach n-qraw l-données mn l-store bla prop-drilling
 import { useSelector } from 'react-redux'
 import { selectCartCount } from '../redux/cartSlice'
 
 const Navbar = () => {
+  // Hna kan-sélectionniw l-3adad total d l-produits li f l-panier direct mn Redux store
   const cartCount = useSelector(selectCartCount)
+
+  // [A. useState] : State local bach n-géréou wach le menu responsive mftouh wla masdoud f l-mobile
   const [isNavOpen, setIsNavOpen] = useState(false)
 
   return (
     <nav className="navbar navbar-expand-lg custom-navbar sticky-top">
       <div className="container">
-        {/* Brand Logo with the authentic Tiremt Restaurant logo without background */}
+        {/* Link d React Router : kirejje3na l-accueil bla ma ydir rechargement l-page */}
         <Link to="/" className="brand-logo" id="nav-brand-logo" aria-label="Tiremt Restaurant Accueil">
           <img
             src="/logo.png"
@@ -25,7 +29,7 @@ const Navbar = () => {
           />
         </Link>
 
-        {/* Mobile Toggle Button */}
+        {/* Bouton Toggle Mobile : onClick ki-bdel l-état d isNavOpen (true/false) */}
         <button
           className="navbar-toggler text-dark border-0 p-1"
           type="button"
@@ -38,10 +42,11 @@ const Navbar = () => {
           <i className={`bi ${isNavOpen ? 'bi-x-lg' : 'bi-list'} fs-2`}></i>
         </button>
 
-        {/* Collapsible Content */}
+        {/* Menu déroulant : Affichage conditionnel b classe CSS bsbab l'état isNavOpen */}
         <div className={`collapse navbar-collapse ${isNavOpen ? 'show' : ''}`} id="restaurantNavbar">
           <ul className="navbar-nav mx-auto align-items-lg-center gap-1 my-3 my-lg-0 nav-pill-wrapper">
             <li className="nav-item">
+              {/* [D. NavLink] : fih callback ({ isActive }) li ki-zid class 'active' auto l-lien l-actif */}
               <NavLink
                 to="/"
                 end

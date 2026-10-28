@@ -1,5 +1,10 @@
 import React from 'react'
 
+// [A. Affichage Conditionnel & Gestion des Erreurs] :
+// ErrorMessage ki-t-afficha mli kat-koun l'état 'rejected'.
+// Ki-stqbel:
+// - message: le texte d'erreur renvoyé par le serveur
+// - onRetry: callback function bash l-user y-3awd y-lancer la requête bla ma y-refresh la page kamla
 const ErrorMessage = ({
   message = "Une erreur inattendue s'est produite lors de la communication avec le serveur.",
   onRetry,

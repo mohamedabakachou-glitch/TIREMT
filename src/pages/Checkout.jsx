@@ -14,10 +14,13 @@ import { submitOrder, selectSubmissionStatus } from '../redux/orderSlice'
 const Checkout = () => {
   const dispatch = useDispatch()
 
+  // [E. Redux Selectors] : Lecture des données globales du panier et statut de soumission
   const cartItems = useSelector(selectCartItems)
   const cartTotal = useSelector(selectCartTotal)
   const submissionStatus = useSelector(selectSubmissionStatus)
 
+  // [B. Formulaire & useState] :
+  // Champs contrôlés (Controlled Inputs) : kol champ 3ndou valeur synchronisée f state objet 'formData'
   const [formData, setFormData] = useState({
     nom: '',
     telephone: '',
@@ -25,34 +28,43 @@ const Checkout = () => {
     notes: '',
   })
 
+  // États locaux pour le choix du créneau de livraison et du mode de paiement
   const [selectedSlot, setSelectedSlot] = useState('asap')
   const [paymentMethod, setPaymentMethod] = useState('card')
+  // State d les erreurs de validation : { nom: '...', telephone: '...' }
   const [errors, setErrors] = useState({})
   const [orderConfirmed, setOrderConfirmed] = useState(null)
 
-  // Delivery fee logic
+  // Calcul des frais de livraison et d'emballage (dynamique selon le total)
   const deliveryFee = cartTotal >= 150 || cartTotal === 0 ? 0 : 15
   const packagingFee = cartItems.length > 0 ? 5 : 0
   const finalTotal = cartTotal + deliveryFee + packagingFee
 
+  // [B. Gestion des événements onChange] :
+  // Fonction générique ki-t-executa f kol frappe clavier bach t-mishi l'état w t-msah l'erreur dyal dak l-champ
   const handleChange = (e) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
 
+    // Mli l-user ki-bda y-ktheb, kan-haydo l'erreur bach l-interface tbqa responsive
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: null }))
     }
   }
 
+  // [B. Validation côté client (Client-side Validation)] :
+  // Kan-vérifiw les champs obligatoires b des règles précises (longueur, format Regex)
   const validateForm = () => {
     const newErrors = {}
 
+    // 1. Validation du Nom
     if (!formData.nom.trim()) {
       newErrors.nom = 'Le nom complet est obligatoire.'
     } else if (formData.nom.trim().length < 3) {
       newErrors.nom = 'Le nom doit comporter au moins 3 caractères.'
     }
 
+    // 2. Validation Regex dyal le numéro de téléphone marocain (05, 06, 07 ou format international +212)
     const phoneRegex = /^(?:(?:\+|00)212|0)[5-7]\d{8}$|^[0-9+() -]{9,15}$/
     if (!formData.telephone.trim()) {
       newErrors.telephone = 'Le numéro de téléphone est obligatoire.'
@@ -60,6 +72,7 @@ const Checkout = () => {
       newErrors.telephone = 'Format de téléphone invalide (ex: 0612345678).'
     }
 
+    // 3. Validation de l'Adresse
     if (!formData.adresse.trim()) {
       newErrors.adresse = 'L’adresse de livraison complète est obligatoire.'
     } else if (formData.adresse.trim().length < 6) {
@@ -67,17 +80,22 @@ const Checkout = () => {
     }
 
     setErrors(newErrors)
+    // Ila kant newErrors khawya (0 clés), le formulaire rah 100% valide !
     return Object.keys(newErrors).length === 0
   }
 
+  // [B. Gestion de la soumission onSubmit] :
   const handleSubmit = async (e) => {
+    // e.preventDefault() : Darouria bach n-habso le rechargement par défaut dyal l-navigateur !
     e.preventDefault()
 
+    // [A. Affichage conditionnel] : Vérification que le panier n'est pas vide
     if (cartItems.length === 0) {
       alert('Votre panier est vide !')
       return
     }
 
+    // Blocage si la validation échoue
     if (!validateForm()) {
       return
     }

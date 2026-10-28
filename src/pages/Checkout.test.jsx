@@ -1,3 +1,9 @@
+// [F. Tests d'Intégration React Testing Library & Vitest] :
+// Hna kan-testiw le comportement réel dyal le composant Checkout:
+// - Le rendu des articles du panier
+// - La validation des champs obligatoires (nom, téléphone, adresse)
+// - Le blocage de soumission en cas d'erreur
+// - L'envoi réussi de la commande via l'API mockée
 import React from 'react'
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import { Provider } from 'react-redux'
@@ -9,7 +15,8 @@ import cartReducer from '../redux/cartSlice'
 import orderReducer from '../redux/orderSlice'
 import api from '../services/api'
 
-// Helper to render component with Redux store and Router
+// renderWithProviders : Fonction utilitaire (Helper) li kat-wrapper Checkout
+// b Store Redux w BrowserRouter bach le test y-khedem f les mêmes conditions réelles
 const renderWithProviders = (preloadedState = {}) => {
   const store = configureStore({
     reducer: {

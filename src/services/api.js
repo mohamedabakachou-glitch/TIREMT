@@ -11,7 +11,7 @@ const FALLBACK_PLATS = [
     nom: "Tagine de Poulet aux Citrons Confits & Olives",
     prix: 85,
     categorie: "Plats Principaux",
-    image: "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=800&q=80",
+    image: "/tagine-poulet.jpg",
     description: "Poulet fermier mijoté lentement aux épices de Fès, safran pur de Taliouine, citrons beldi confits et olives rouges de Marrakech.",
     tempsPrep: "25 min",
     rating: 4.9,
@@ -128,8 +128,12 @@ const FALLBACK_PLATS = [
   }
 ]
 
-// Fetch helper wrapper with proper error checking
-// Fetch request kat-sift HTTP GET/POST w kat-vérifier res.ok 9bl json()
+// [C. API REST & Centralisation Fetch] :
+// Hada l-moteur central dyal ga3 les requêtes réseau HTTP f l-projet.
+// F blast ma n-kettro fetch() mchtata f les composants, 3zelnaha hna f service dédié:
+// 1. Kan-zido les headers 'Content-Type: application/json' auto.
+// 2. Kan-vérifiw wach response.ok (status 200-299) 9bl ma n-dirou response.json().
+// 3. F cas d'erreur réseau, fih fallback intelligent f localStorage bach l-app tbqa khddama hta offline!
 async function request(endpoint, options = {}) {
   const url = `${API_BASE_URL}${endpoint}`
   const config = {
@@ -147,7 +151,7 @@ async function request(endpoint, options = {}) {
     }
     return await response.json()
   } catch (err) {
-    // Graceful offline fallback if server is unreachable
+    // Mode de secours local (Offline fallback) ila kan JSON server ma-mkhdemch
     console.warn(`[API] Server unavailable at ${url}, falling back to local storage/mock:`, err.message)
 
     if (endpoint === '/plats') {
@@ -161,6 +165,30 @@ async function request(endpoint, options = {}) {
       throw new Error(`Plat avec ID ${id} introuvable`)
     }
 
+    // PATCH / PUT local fallback
+    if (endpoint.startsWith('/commandes/') && (options.method === 'PATCH' || options.method === 'PUT')) {
+      const id = endpoint.split('/')[2]
+      const updates = JSON.parse(options.body || '{}')
+      const existing = JSON.parse(localStorage.getItem('restaurant_commandes') || '[]')
+      const index = existing.findIndex((c) => String(c.id) === String(id))
+      if (index !== -1) {
+        existing[index] = { ...existing[index], ...updates }
+        localStorage.setItem('restaurant_commandes', JSON.stringify(existing))
+        return existing[index]
+      }
+      return { id, ...updates }
+    }
+
+    // DELETE local fallback
+    if (endpoint.startsWith('/commandes/') && options.method === 'DELETE') {
+      const id = endpoint.split('/')[2]
+      const existing = JSON.parse(localStorage.getItem('restaurant_commandes') || '[]')
+      const updated = existing.filter((c) => String(c.id) !== String(id))
+      localStorage.setItem('restaurant_commandes', JSON.stringify(updated))
+      return { success: true, id }
+    }
+
+    // POST local fallback
     if (endpoint === '/commandes' && options.method === 'POST') {
       const order = JSON.parse(options.body || '{}')
       const createdOrder = {
@@ -174,6 +202,7 @@ async function request(endpoint, options = {}) {
       return createdOrder
     }
 
+    // GET local fallback
     if (endpoint === '/commandes' && (!options.method || options.method === 'GET')) {
       const stored = localStorage.getItem('restaurant_commandes')
       return stored ? JSON.parse(stored) : []
@@ -183,22 +212,43 @@ async function request(endpoint, options = {}) {
   }
 }
 
+// [C. Les 4 Méthodes CRUD exportées] :
 export const api = {
-  // GET /plats — Retrieve menu items
+  // 1. GET (READ) : Récupération dyal la liste complète des plats
   getPlats: () => request('/plats'),
 
-  // GET /plats/:id — Retrieve single dish detail by ID
+  // 1. GET (READ) : Récupération d'un seul plat via son ID
   getPlatById: (id) => request(`/plats/${id}`),
 
-  // POST /commandes — Submit a new customer order
+  // 2. POST (CREATE) : Envoi dyal nouvelle commande avec body JSON
   createCommande: (commande) =>
     request('/commandes', {
       method: 'POST',
       body: JSON.stringify(commande),
     }),
 
-  // GET /commandes — Retrieve list of submitted orders
+  // 1. GET (READ) : Récupération de l'historique des commandes
   getCommandes: () => request('/commandes'),
+
+  // 3. PATCH (UPDATE PARTIEL) : Mise à jour d'un champ précis (ex: statut 'Livré' wla notes)
+  updateCommande: (id, updates) =>
+    request(`/commandes/${id}`, {
+      method: 'PATCH',
+      body: JSON.stringify(updates),
+    }),
+
+  // 3. PUT (UPDATE TOTAL) : Remplacement complet d'une commande
+  replaceCommande: (id, fullData) =>
+    request(`/commandes/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify(fullData),
+    }),
+
+  // 4. DELETE (SUPPRESSION) : Annulation et suppression d'une commande par son ID
+  deleteCommande: (id) =>
+    request(`/commandes/${id}`, {
+      method: 'DELETE',
+    }),
 }
 
 export default api

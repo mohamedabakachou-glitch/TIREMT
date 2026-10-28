@@ -1,5 +1,8 @@
 import React from 'react'
 
+// [A. Affichage Conditionnel & Composant réutilisable] :
+// Loader ki-t-afficha mli kat-koun chi requête API f l'état 'pending'.
+// Ki-akhod le prop 'message' bach y-personalisi le texte de chargement selon la page.
 const Loader = ({ message = 'Chargement de la carte gastronomique...' }) => {
   return (
     <div className="d-flex flex-column justify-content-center align-items-center py-5 my-4" id="app-loader">

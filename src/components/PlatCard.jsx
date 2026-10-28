@@ -1,16 +1,26 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+// [E. Redux Toolkit] : useDispatch bach n-envoyiw l'action addToCart l l-store
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../redux/cartSlice'
 
+// [A. Composant réutilisable & Props] :
+// PlatCard ki-stqbel l'objet 'plat' f les props (destructuring { plat }) mn l-composant parent (Menu wla Home)
 const PlatCard = ({ plat }) => {
   const dispatch = useDispatch()
+
+  // [A. useState pour état local] :
+  // justAdded: feedback visuel temporaire (1.2s) bach l-user y-chouf 'Ajouté' b l-khder
   const [justAdded, setJustAdded] = useState(false)
+  // isFavorite: state local bach y-bdel l-icon d l-9elb bin khawi w 3amer
   const [isFavorite, setIsFavorite] = useState(false)
 
+  // Handler d'ajout au panier :
   const handleAddToCart = (e) => {
+    // stopPropagation bach l-click ma y-activich l-lien dyal la carte kamla
     e.preventDefault()
     e.stopPropagation()
+    // Dispatch d l'action Redux avec le plat en payload
     dispatch(addToCart(plat))
     setJustAdded(true)
     setTimeout(() => {

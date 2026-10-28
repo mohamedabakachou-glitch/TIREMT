@@ -1,3 +1,7 @@
+// [F. Tests Unitaires Vitest - cartSlice] :
+// Hada fichier dyal les tests unitaires li ki-t-executa b Vitest.
+// Ki-vérifier l-fonctionnement logique dyal ga3 les reducers w les sélecteurs du panier
+// bla ma n-7tajo n-lanciwh l-navigateur (exécution rapide en mémoire).
 import { describe, it, expect, beforeEach } from 'vitest'
 import cartReducer, {
   addToCart,
@@ -10,10 +14,12 @@ import cartReducer, {
 } from './cartSlice'
 
 describe('cartSlice reducer and selectors', () => {
+  // beforeEach: ki-khwi localStorage 9bl kol test bach les tests y-b9aw isolés w indépendants
   beforeEach(() => {
     localStorage.clear()
   })
 
+  // Test 1: Vérification de l'état initial par défaut (tableau vide)
   it('should return initial state with empty items', () => {
     const initialState = cartReducer(undefined, { type: 'unknown' })
     expect(initialState.items).toEqual([])

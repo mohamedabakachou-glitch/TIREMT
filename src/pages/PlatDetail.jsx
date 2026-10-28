@@ -7,14 +7,23 @@ import Loader from '../components/Loader'
 import ErrorMessage from '../components/ErrorMessage'
 
 const PlatDetail = () => {
+  // [D. React Router : useParams()] :
+  // Hada hook d React Router ki-extracter l-valeur d ':id' li kayna f l'URL (ex: '/plats/2' -> id = '2')
   const { id } = useParams()
   const dispatch = useDispatch()
 
+  // [E. Redux Toolkit Selectors] : Lecture dyal le plat sélectionné w le statut de chargement
   const plat = useSelector(selectSelectedPlat)
   const status = useSelector(selectDetailStatus)
+
+  // [A. useState] : États locaux pour la quantité choisie et le toast de notification
   const [quantity, setQuantity] = useState(1)
   const [notification, setNotification] = useState(null)
 
+  // [A. useEffect avec Cleanup Function] :
+  // 1. Mli l-composant ki-t-monter w 3ndna id, kan-lancer le thunk fetchPlatById(id).
+  // 2. Return callback (Cleanup) : mli l-user ki-khrej mn la page, kan-vidéou le plat sélectionné
+  //    bach ila dkhl l plat akhor ma y-banx lih l-qdim pendant le chargement !
   useEffect(() => {
     if (id) {
       dispatch(fetchPlatById(id))
@@ -24,6 +33,7 @@ const PlatDetail = () => {
     }
   }, [id, dispatch])
 
+  // [E. Action Redux] : Ajout au panier avec la quantité personnalisée choisie
   const handleAddToCart = () => {
     if (!plat) return
     dispatch(addToCart({ ...plat, quantity }))
